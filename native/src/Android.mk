@@ -88,8 +88,6 @@ LOCAL_STATIC_LIBRARIES := \
     libbase \
     liblzma \
     liblz4 \
-    libbz2 \
-    libz \
     libzopfli \
     libboot-rs
 
@@ -119,8 +117,6 @@ LOCAL_STATIC_LIBRARIES := \
     libbase \
     libpolicy \
     libpolicy-rs
-
-LOCAL_SRC_FILES := sepolicy/main.cpp
 
 include $(BUILD_EXECUTABLE)
 

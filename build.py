@@ -509,6 +509,7 @@ def clippy_cli():
     for triple in build_abis.values():
         cmds[3] = triple
         run_cargo(cmds)
+        run_cargo(cmds + ["--release"])
     os.chdir(Path("..", ".."))
 
 
@@ -552,7 +553,7 @@ def setup_rustup():
     cargo_bin = cargo_home / "bin"
     for src in cargo_bin.iterdir():
         tgt = wrapper_dir / src.name
-        tgt.symlink_to(src)
+        tgt.symlink_to(f"rustup{EXE_EXT}")
 
     # Build rustup_wrapper
     wrapper_src = Path("tools", "rustup_wrapper")
